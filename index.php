@@ -16,18 +16,6 @@ include 'abstract/paymentType.abtract.php';
 <body>
     <?php
 
-
-
-$allServices = new Test();
-
-    // $allServices->getServices();
-    // $allServices->setCategories('JavaScriptss', 'javascriptsNotes');
-    // $allServices->setCategories();
-
-
-
-
-
     $userObj = new UsersView();
     $userObj->showServices('Frontend Development');
     $userObj2 = new UsersContr();
