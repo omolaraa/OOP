@@ -32,7 +32,7 @@ include 'abstract/paymentType.abtract.php';
 $allServices = new Test();
 
     $allServices->getServices();
-    $allServices->getClientsStmt("Tobi", "g3osunleye@outlook.com");
+    $allServices->getClientsStmt("tobi", "g3osunleye@outlook.com");
     // $allServices->setCategoriesStmt('PHsdfghP', 'phpNotes');
     // $allServices->setCategoriesStmt('PHfhP', 'phpgdwNotes');
 

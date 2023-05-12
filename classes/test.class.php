@@ -12,16 +12,36 @@ class Test extends Dbh{
     }
 
     public function getClientsStmt($name, $email){
-        $sql = "SELECT * FROM client_info WHERE name = ? AND  email = ?";
-        $stmt = $this->connect()->prepare($sql);
+
+        $host = "localhost";
+        $username = "root";
+        $password = '';
+        $dbname = 'omolara_blog';
+
+        $conn = new mysqli($host, $username, $password, $dbname);
+
+        $stmt = $conn->prepare("SELECT name, email FROM client_info WHERE name = ? AND email = ?");
         $stmt->bind_param("ss", $name, $email);
         $stmt->execute();
-        $stmt->bind_result($name, $email);
-        $name = $stmt->fetch();
-     
-        echo "name";
 
-        $stmt->close();
+        /* bind variables to prepared statement */
+        $stmt->bind_result($col1, $col2);
+
+        /* fetch values */
+        while ($stmt->fetch()) {
+            printf("%s %s\n", $col1, $col2);
+        }
+
+        // $sql = "SELECT * FROM client_info WHERE name = ? AND  email = ?";
+        // $stmt = $this->connect()->prepare($sql);
+        // $stmt->bind_param("ss", $name, $email);
+        // $stmt->execute();
+        // $stmt->bind_result($name, $email);
+        // $name = $stmt->fetch();
+     
+        // echo "name";
+
+        // $stmt->close();
     }
 
 
