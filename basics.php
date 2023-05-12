@@ -40,5 +40,22 @@ echo Person :: $drinkingAge;
 echo $person1->getDA();
 ?>
 
+
+<?php
+$buyProduct = new BuyProduct();
+echo $buyProduct->getPayment();
+
+
+// Anonymous class
+$newObj = new class(){
+    public function helloWorld(){
+        echo nl2br("\n Hello World! \n");
+    }
+};
+
+$newObj->helloWorld();
+
+?>
+
 </body>
 </html>
